@@ -1,0 +1,17 @@
+## ignore compiled files
+*.pyc
+*.class
+
+## ignore binary files
+*.exe
+*.bin
+*.jar
+*.zip
+
+## ignore image files
+*.png
+*.jpg
+*.gif
+
+## ignore config files of 3rd party software
+jd-gui.cfg
