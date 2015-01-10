@@ -1,0 +1,7 @@
+Disable javascript when going to the "secret webpage"
+View the source, study the javascript code.
+The username and password are in the proper variables.
+Enable javascript, refresh page.
+Input the username and password you just got.
+Done!
+
