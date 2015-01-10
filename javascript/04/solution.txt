@@ -1,0 +1,9 @@
+The labels "User:" and "Pass:" are green...
+View the source, look for something green (the comments)
+The commented javascript gives an idea where we need to go.
+But modifying the url like the source says makes us end up on the homepage.
+What if...
+that particular html file doesn't exist ?
+Now only append the username to the url.
+Behold, a directory listing with 1 html file.
+Open it and see for yourself.
