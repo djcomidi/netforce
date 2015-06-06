@@ -1,0 +1,12 @@
+When decompiled,
+we see a text "Login Success, Loading..", so that is where we want to end up.
+After that, an url is build using the value from inuser[1]
+inuser[] is filled in the function inFile()
+in inFile, a file is read with path coming from inUrl
+inUrl gets its value from codebase and a filename
+That filename is a concatenation of variable and a string.
+The variable is "123" and the string is "pass.txt"
+So the file that is read is "123pass.txt"
+Append this to the url to see what is inside.
+The first line is assigned to inuser[1], which is the value we need.
+Change the url to this page.
