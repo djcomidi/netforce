@@ -1,0 +1,3 @@
+When decompiled,
+the inputfield is compared to a variable.
+This variable holds the word that is the solution.
