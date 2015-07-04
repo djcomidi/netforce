@@ -1,0 +1,20 @@
+
+lenge pag for the chal this is a tra columns ns e cipher the n is positio password
+b     a   d   f   b    e    g  i k   l       k  a k      j   k h  k       c
+
+a pag_e
+b chal_lenge
+c password
+d for
+e this
+f the
+g is
+h is
+i a
+j the
+k tra_ns_positio_n_cipher
+l columns
+
+this is a columns transpositioncipher
+the password for the challenge is page
+
