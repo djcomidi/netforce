@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import string
 import random
@@ -21,6 +21,7 @@ def find_sols(s="",val=0):
             for sol in find_sols(s+c,val+ord(c)):
                 yield sol
 
-print "this is one of the many possible solutions:"
-start=""
-print random.choice(list(find_sols()))
+print("this is one of the many possible solutions:")
+start = ""
+sol = random.choice(list(find_sols()))
+print(sol)

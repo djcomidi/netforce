@@ -21,5 +21,5 @@ cryptpass = "VDkPWd0lakHPl"
 pass2 = cryptpass[10] + cryptpass[8] + cryptpass[7] + cryptpass[7] + cryptpass[6]
 addr = "solution.php?passwd="
 addr = addr[:addr.index('?')+1] + "blabla=" + pass2
-print addr
+print(addr)
 subprocess.call(["rm", "-f", "encoded.js", "decoded.js"])
