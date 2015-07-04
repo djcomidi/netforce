@@ -1,0 +1,94 @@
+<project name="LoginChallenge">
+  <property name="src.dir" value="src"/>
+  <property name="build.dir" value="build"/>
+  <property name="dist.dir" value="dist"/>
+  <property name="common.dir" value="netforcechallenge"/>
+  <!-- settings for desktop -->
+  <property name="desktop.dir" value="desktop"/>
+  <property name="desktop.main-class" value="LoginChallengeDesktop"/>
+  <property name="desktop.build.dir" value="${build.dir}/${desktop.dir}"/>
+  <property name="desktop.jarfile" value="${ant.project.name}-${desktop.dir}.jar"/>
+  <!-- settings for applet -->
+  <property name="applet.dir" value="applet"/>
+  <property name="applet.build.dir" value="${build.dir}/${applet.dir}"/>
+  <!-- settings for solver -->
+  <property name="solver.dir" value="solver"/>
+  <property name="solver.build.dir" value="${build.dir}/${solver.dir}"/>
+  <property name="solver.main-class" value="LoginChallengeSolver"/>
+  <property name="solver.jarfile" value="${ant.project.name}-${solver.dir}.jar"/>
+
+  <!-- DESKTOP APPLICATION -->
+  <target name="clean.desktop">
+    <delete dir="${desktop.build.dir}/${common.dir}/"/>
+    <delete dir="${desktop.build.dir}/${desktop.dir}/"/>
+    <delete file="${dist.dir}/${desktop.jarfile}"/>
+  </target>
+  <target name="compile.desktop">
+    <javac srcdir="${src.dir}" destdir="${desktop.build.dir}" includeantruntime="false">
+      <exclude name="${applet.dir}/"/>
+      <exclude name="${solver.dir}/"/>
+    </javac>
+  </target>
+  <target name="jar.desktop" depends="compile.desktop">
+    <mkdir dir="${dist.dir}"/>
+    <jar destfile="${dist.dir}/${desktop.jarfile}" basedir="${desktop.build.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${desktop.dir}/${desktop.main-class}"/>
+      </manifest>
+    </jar>
+  </target>
+  <target name="run.desktop" depends="jar.desktop">
+    <java jar="${dist.dir}/${desktop.jarfile}" fork="true"/>
+  </target>
+
+  <!-- JAVA APPLET -->
+  <target name="clean.applet">
+    <delete dir="${applet.build.dir}/${common.dir}/"/>
+    <delete dir="${applet.build.dir}/${applet.dir}/"/>
+  </target>
+  <target name="compile.applet">
+    <javac srcdir="${src.dir}" destdir="${applet.build.dir}" includeantruntime="false">
+      <exclude name="${desktop.dir}/"/>
+      <exclude name="${solver.dir}/"/>
+    </javac>
+  </target>
+  <target name="run.applet">
+    <exec executable="appletviewer">
+      <arg value="applet.html"/>
+    </exec>
+  </target>
+
+  <!-- BRUTE FORCE SOLVER -->
+  <target name="clean.solver">
+    <delete dir="${solver.build.dir}/${solver.dir}/"/>
+    <delete file="${dist.dir}/${solver.jarfile}"/>
+  </target>
+  <target name="compile.solver">
+    <javac srcdir="${src.dir}" destdir="${solver.build.dir}" includeantruntime="false">
+      <exclude name="${desktop.dir}/"/>
+      <exclude name="${applet.dir}/"/>
+      <exclude name="${common.dir}/"/>
+    </javac>
+  </target>
+  <target name="jar.solver" depends="compile.solver">
+    <mkdir dir="${dist.dir}"/>
+    <jar destfile="${dist.dir}/${solver.jarfile}" basedir="${solver.build.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${solver.dir}/${solver.main-class}"/>
+      </manifest>
+    </jar>
+  </target>
+  <target name="run.solver" depends="jar.solver">
+    <java jar="${dist.dir}/${solver.jarfile}" fork="true"/>
+  </target>
+  <target name="run.solver.john" depends="jar.solver">
+    <java jar="${dist.dir}/${solver.jarfile}" fork="true">
+      <arg value="--john"/>
+    </java>
+  </target>
+
+  <!-- GENERAL USE CASES -->
+  <target name="clean.all" depends="clean.applet,clean.desktop,clean.solver"/>
+  <target name="compile.all" depends="compile.applet,compile.desktop,compile.solver"/>
+  <target name="jar.all" depends="jar.desktop,jar.solver"/>
+</project>
