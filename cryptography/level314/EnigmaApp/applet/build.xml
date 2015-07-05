@@ -1,0 +1,15 @@
+<project name="EnigmaApp" default="run">
+  <property name="class.dir" value="classes"/>
+  <target name="clean">
+    <delete dir="${class.dir}"/>
+  </target>
+  <target name="compile">
+    <mkdir dir="${class.dir}"/>
+    <javac srcdir="src" destdir="${class.dir}" includeantruntime="false"/>
+  </target>
+  <target name="run" depends="compile">
+    <exec executable="appletviewer">
+      <arg value="applet.html"/>
+    </exec>
+  </target>
+</project>
