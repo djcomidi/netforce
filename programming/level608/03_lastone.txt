@@ -1,0 +1,50 @@
+Work out this part manually. It is assembly for the Pentium 2:
+
+Calculation:
+                EAX EBX A   B   C   D   E   F   G   H   I   J   K
+                0   0   40  44  23  72  25  43  0   0   0   0   0
+MOV EAX, C      23  |   |   |   <   |   |   |   |   |   |   |   |
+MOV EBX, D      |   72  |   |   |   <   |   |   |   |   |   |   |
+MOV D,   EAX    >   |   |   |   |   23  |   |   |   |   |   |   |
+MOV C,   EBX    |   >   |   |   72  |   |   |   |   |   |   |   |
+
+MOV EAX, A      40  |   <   |   |   |   |   |   |   |   |   |   |
+ADD EAX, B      84  |   |   +   |   |   |   |   |   |   |   |   |
+MOV G,   EAX    >   |   |   |   |   |   |   |   84  |   |   |   |
+MOV EAX, A      40  |   <   |   |   |   |   |   |   |   |   |   |
+ADD EAX, C      112 |   |   |   +   |   |   |   |   |   |   |   |
+MOV H,   EAX    >   |   |   |   |   |   |   |   |   112 |   |   |
+MOV EAX, B      44  |   |   <   |   |   |   |   |   |   |   |   |
+ADD EAX, D      67  |   |   |   |   <   |   |   |   |   |   |   |
+MOV I,   EAX    >   |   |   |   |   |   |   |   |   |   67  |   |
+MOV EAX, A      40  |   <   |   |   |   |   |   |   |   |   |   |
+ADD EAX, E      65  |   |   |   |   |   +   |   |   |   |   |   |
+MOV J,   EAX    >   |   |   |   |   |   |   |   |   |   |   65  |
+MOV EAX, C      72  |   |   |   <   |   |   |   |   |   |   |   |
+ADD EAX, F      115 |   |   |   |   |   |   +   |   |   |   |   |
+MOV K,   EAX    >   |   |   |   |   |   |   |   |   |   |   |   115
+
+MOV EAX, C      72  |   |   |   <   |   |   |   |   |   |   |   |
+MOV EBX, D      |   23  |   |   |   <   |   |   |   |   |   |   |
+MOV D,   EAX    >   |   |   |   |   72  |   |   |   |   |   |   |
+MOV C,   EBX    |   >   |   |   23  |   |   |   |   |   |   |   |
+
+A        DW  40
+B        DW  44
+C        DW  23
+D        DW  72
+E        DW  25
+F        DW  43
+
+G        DW  0
+H        DW  0
+I        DW  0
+J        DW  0
+K        DW  0
+
+The password is the contents of G H I J K
+
+                ---------------------------------------------------
+                EAX EBX A   B   C   D   E   F   G   H   I   J   K
+                72  23  40  44  23  72  25  43  84  112 67  65  115
+                                                T   p   C   A   s

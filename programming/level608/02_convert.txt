@@ -1,0 +1,71 @@
+#include <iostream.h>
+#include <fstream.h>
+#include <conio.h>
+#include <io.h>
+#include <string.h>
+
+ofstream file("lastone.txt");
+int a,b,c,d,e,f;
+
+void part1();
+void part2();
+
+void main()
+{
+    file << "Work out this part manually. It is assembly for the Pentium 2:" << endl << endl;
+    file << "Calculation: " << endl;
+    part1();
+    file << "         MOV EAX,A" << endl;
+    file << "         ADD EAX,B" << endl;
+    file << "         MOV G,EAX" << endl;
+    file << "         MOV EAX,A" << endl;
+    file << "         ADD EAX,C" << endl;
+    file << "         MOV H,EAX" << endl;
+    file << "         MOV EAX,B" << endl;
+    file << "         ADD EAX,D" << endl;
+    file << "         MOV I,EAX" << endl;
+    file << "         MOV EAX,A" << endl;
+    file << "         ADD EAX,E" << endl;
+    file << "         MOV J,EAX" << endl;
+    file << "         MOV EAX,C" << endl;
+    file << "         ADD EAX,F" << endl;
+    file << "         MOV K,EAX" << endl;
+    part1();
+    part2();
+    file << "The password is the contents of G H I J K" << endl;
+    getch();
+}
+
+void part1()
+{
+    file << "         MOV EAX,C" << endl;
+    file << "         MOV EBX,D" << endl;
+    file << "         MOV D,EAX" << endl;
+    file << "         MOV C,EBX" << endl;
+}
+
+void part2()
+{
+    a = 40;
+    b = 44;
+    c = 23;
+    d = 72;
+    e = 25;
+    f = 43;
+    file << "             " << endl;
+    file << "A        DW  " << a << endl;
+    file << "B        DW  " << b << endl;
+    file << "C        DW  " << c << endl;
+    file << "D        DW  " << d << endl;
+    file << "E        DW  " << e << endl;
+    file << "F        DW  " << f << endl;
+    file << "             " << endl;
+    file << "             " << endl;
+    file << "G        DW  0" << endl;
+    file << "H        DW  0" << endl;
+    file << "I        DW  0" << endl;
+    file << "J        DW  0" << endl;
+    file << "K        DW  0" << endl;
+    file << "             " << endl;
+    file << "             " << endl;
+}
