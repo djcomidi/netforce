@@ -1,0 +1,39 @@
+disassembled using p32dasm
+
+004021B0: Private Form1.Command_Click()
+004021B6: push     __vbaExceptHandler
+00402207: mov ebx, __vbaObjSet ; Set (object)
+00402235: call     __vbaHresultCheckObj
+0040223F: call     __vbaLenBstr ; Len()
+00402254: call     __vbaFreeStr
+0040225D: call     __vbaFreeObj
+0040226C: mov edx, "cracking"
+00402274: call     __vbaStrCopy
+004022AB: call     __vbaHresultCheckObj
+004022B9: call     __vbaStrCmp
+004022CB: call     __vbaFreeStr
+004022D4: call     __vbaFreeObj
+004022DD: mov edx, "yes"
+004022E4: mov edx, "no"
+004022EC: call     __vbaStrCopy
+004022F6: push     "yes"
+004022FB: call     __vbaStrCmp
+00402322: call     rtcRgb ; RGB()
+0040233C: call     __vbaHresultCheckObj
+00402342: mov edi, __vbaFreeObj
+0040235B: call     __vbaObjSet ; Set (object)
+00402363: push     "ACCESS GRANTED"
+00402397: call     rtcRgb ; RGB()
+004023B1: call     __vbaHresultCheckObj
+004023B7: mov edi, __vbaFreeObj
+004023D0: call     __vbaObjSet ; Set (object)
+004023D8: push     "ACCESS DENIED"
+004023F2: call     __vbaHresultCheckObj
+0040240E: call     __vbaFreeStr
+00402417: call     __vbaFreeObj
+0040241E: mov esi, __vbaFreeStr
+
+ACCESS GRANTED and ACCESS DENIED are the ones that get displayed
+the only other strings are "yes", "no" and "cracking"
+at least one should be the password :)
+
