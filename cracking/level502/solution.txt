@@ -1,0 +1,30 @@
+decompiled using p32dasm
+
+00402240: Private Form1.Command_Click()
+<snip />
+00402715: mov edi, __vbaStrCmp
+0040271C: push     "69"   # ASCII for E
+0040272B: push     "99"   # ASCII for c
+0040273A: push     "104"  # ASCII for h
+00402749: push     "3"    #           3
+00402758: push     "108"  # ASCII for l
+00402767: push     "0"    #           0
+00402776: push     "110"  # ASCII for n
+00402781: mov edx, "yes"
+00402789: call     __vbaStrCopy
+00402793: mov edi, __vbaStrCmp
+0040279D: push     "yes"
+004027B6: call     __vbaObjSet ; Set (object)
+004027D1: push     "????????"
+004027D8: call     __vbaHresultCheckObj
+004027DE: mov edi, __vbaFreeObj
+004027F7: call     __vbaObjSet ; Set (object)
+004027FF: push     "ACCESS GRANTED"
+00402812: push     "????????"
+00402819: call     __vbaHresultCheckObj
+00402831: call     __vbaObjSet ; Set (object)
+00402839: push     "ACCESS DENIED"
+0040284C: push     "????????"
+<more snip... />
+
+concatenate the characters and you have the password
