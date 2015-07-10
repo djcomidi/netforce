@@ -1,0 +1,10 @@
+To solve this, I used this addons in firefox:
+https://addons.mozilla.org/en-US/firefox/addon/modify-headers/?src=ss
+
+Try to add these headers to the page request:
+NAME       VALUE
+Forwarded  politie.nl
+Via        net-force.nl
+
+Refresh the challenge page
+
