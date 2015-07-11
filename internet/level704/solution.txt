@@ -1,0 +1,11 @@
+ORIGINAL CODE                               ELEMENT ABBREVIATIONS              CHARACTERS
+-------------                               ---------------------              ----------
+|22- |90+ |10+ |                            |Ti-|Th+|Ne+|                      The
+|24- |76- |86- |68+ |99- |21+ |69- |        |Cr-|Os-|Rn-|Er+|Es-|Sc+|Tm-|      CORrEcT
+|91  |38- |51- |74  |42+ |86- |48+ |        |Pa |Sr-|Sb-|W  |Mo+|Rn-|Cd+|      PaSSWoRd
+|100-|8   |103+|                            |Fm-|O  |Lr+|                      FOr
+|90  |53  |99+ |                            |Th |I  |Es+|                      ThIs
+|55- |1   |13  |13+ |2+  |93- |12+ |54+ |   |Cs-|H  |Al |Al+|He+|Np-|Mg+|Xe+|  CHAlleNge
+|53  |106-|                                 |I  |Sg-|                          IS
+|59- |68  |3+  |67+ |48+ |77- |26+ |36- |   |Pr-|Er |Li+|Ho+|Cd+|Ir-|Fe+|Kr-|  PEriodIeK
+
