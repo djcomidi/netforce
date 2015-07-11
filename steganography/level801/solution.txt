@@ -1,0 +1,6 @@
+View the sourcode of the challenge page OR highlight all the content.
+It states that we should check out password.gif
+Append password.gif to the url and save that file.
+It doesn't appear to be a gif.
+Open it with your favorite editor and you can see why it isn't a gif :)
+
