@@ -7,5 +7,6 @@ solution.py = a python3 script to get the password and contents of the zipped fi
 time: about 14mins
 
 solution.sh = shell script to get the password of the zip file
+fcrackzip is required for this.
 time: about 2mins
 

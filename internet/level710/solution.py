@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
+from urllib import parse, request
 
-import urllib.parse
-import urllib.request
 
 def decrypt(ds):
     return ''.join(chr(ord(c)-1) for c in ds[::-1])
@@ -15,6 +13,6 @@ print(scoreVal)
 
 url = "https://net-force.nl/challenge/level710/" + page
 postvalues = {'score': scoreVal}
-postdata = urllib.parse.urlencode(postvalues).encode('utf-8')
-html = urllib.request.urlopen(url, data=postdata).read().decode()
+postdata = parse.urlencode(postvalues).encode()
+html = request.urlopen(url, data=postdata).read().decode()
 print(html)

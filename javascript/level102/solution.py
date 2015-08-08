@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 numletter = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 sol = ""
@@ -10,4 +8,3 @@ sol += numletter[16]
 sol += numletter[24]
 sol += numletter[1:4]
 print(sol)
-

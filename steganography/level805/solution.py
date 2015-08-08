@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from urllib import request
 import re
 
@@ -12,5 +10,5 @@ for m in re.findall(b'[01]+', bytes):
         longest = m
 data = longest.decode()
 print(data)
-msg = "".join( chr(int(data[i:i+8],2)) for i in range(0,len(data),8) )
+msg = "".join(chr(int(data[i:i+8], 2)) for i in range(0, len(data), 8))
 print(msg)

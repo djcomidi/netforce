@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from PIL import Image
 from urllib import request
 from io import BytesIO
@@ -11,6 +9,5 @@ img = img.convert("RGB")
 pix = img.load()
 W, H = img.size
 
-message = "".join( chr(pix[i,0][2]) for i in range(0,W,31) )
+message = "".join(chr(pix[i, 0][2]) for i in range(0, W, 31))
 print(message)
-

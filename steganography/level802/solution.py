@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 text = [
     "110101010101010101010101010101010101010101010101",
     "011111111111111111111111111111111111111111111110",
@@ -18,6 +16,7 @@ text = [
 ]
 
 # Unicode Character 'FULL BLOCK' (U+2588)
-for line in [ line[1:-1].replace("1"," ").replace("0",u"\u2588") for line in text[1:-1]]:
+CHARS = [chr(0x2588), " "]
+for row in text:
+    line = "".join(CHARS[int(c)] for c in row)
     print(line)
-
